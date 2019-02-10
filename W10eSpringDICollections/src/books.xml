@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean id="book1" class="cb.beans.Book">
+		<property name="isbn" value="96145237" />
+		<property name="book_name" value="Princess Cinderella" />
+		<property name="price" value="20" />
+		<property name="publication" value="Packt-Pub"></property> 
+	</bean>
+	
+	
+	<!-- <bean id="book2" class="cb.beans.Book">
+		<constructor-arg value="423334566" />
+		<constructor-arg value="Core Java" />
+		<constructor-arg value="45" />
+		<constructor-arg value="Packt-Pub" />
+	</bean> -->
+
+	<bean id="book3" class="cb.beans.Book" p:isbn="5687563218"
+		p:book_name="Playing it in my way" p:price="17" p:publication="Hodder and Stoughton">
+	</bean>
+		
+		
+	<bean id="Library_list" class="cb.beans.Library_List">
+		<property name="books">
+			<list>
+				<ref bean="book1"></ref>
+				<ref bean="book2"></ref>
+				<ref bean="book3"></ref>
+				<ref bean="book3"></ref>	
+			</list>
+		</property>
+	</bean>
+
+
+</beans>
